@@ -15,7 +15,10 @@ let imageLoaded = ref(
 
 const sendImage = async (imageFormData) => {
 	loading.value = true
-	const res = await axios.post('http://localhost:8000/images', imageFormData)
+	const res = await axios.post(
+		'https://little-apis.herokuapp.com/images',
+		imageFormData
+	)
 	if (res) {
 		console.log(res.data.result.secure_url)
 		loading.value = false
